@@ -16,14 +16,13 @@ def read_file(file_name):
     if file_name.endswith('.zip') :
         with ZipFile(file_name, 'r') as zip:
             print(zip.extractall())
-            #look for the file that ends with csv format
-
-    elif file_name.endswith('.csv'):
-        data = pd.read_csv(file_name)
-        data_frame = pd.DataFrame(data)
-
+            #TODO look for the file that ends with csv format
     else:
         print('Sorry insert a zip file or a csv file')
+
+    #process the data
+    data = pd.read_csv(file_name)
+    data_frame = pd.DataFrame(data)
 
 
 def sql_insertion(processed_file):
@@ -32,6 +31,9 @@ def sql_insertion(processed_file):
     query3 = 'INSERT INTO ... where'
     #making sure
     check_query = 'select * from ... where ...'
+
+
+
 
 
 
